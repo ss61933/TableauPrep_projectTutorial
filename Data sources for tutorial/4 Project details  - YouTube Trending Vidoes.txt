@@ -1,0 +1,54 @@
+ABOUT PROJECT 
+--------------
+- YouTue maintains a list of the top trending videos on the platform
+- A combination of factors,number of views,shares,comments and likes , are used to identify a trending video
+- The dataset is a daily record of the top trending videos.
+- The dataset includes several months of data on daily trending Vidoes 
+- Data is included for the US,GB,DE,CA,FR regions , with u to 200 listed trending videos per day 
+
+
+WHAT IS THE CONTEXT
+---------------
+
+- Each region's data is in a seperate file 
+- Data inclues the video title, channel title, publish time, tags ,views likes and dislikes ,description and comment count 
+- A seprate data also includes a category_id field
+- The data is published under CC0: Public doman license so you can use this data for prety much anything 
+
+
+WHAT IS THE TASK
+-----------------
+
+
+Prepare the data for analysis. 
+Client wants to do analysis of :
+
+- Analysis on the categories , which perform best and when 
+- Ability to dill down from category analysis to see the videos 
+- Analysis on the main video tags
+- Genral time series analysis 
+- Files should be output as .hyper 
+
+
+OUTPUT 
+-------------------
+
+1 A table with row level detail from the five country files combined 
+2 A 'Max' table showing the max views of each trending videos 
+
+
+
+TIPS 
+--------------
+- Use "" as a text delimiter
+- You will need one union and one join step. You can do the union in the input step if you amend the file names , otherwise a union step in the flow is fine 
+- You will not need pivot or filter step
+- You may need to add new fields 
+
+
+IMPLEMENTATION 
+---------------------
+
+Step1 - Union all 5 files. No cleanup required
+Step2 - Foramt trending date to date (split and merge and parse to date format ) Setup this field for trend analysis 
+Step3 - Identify the main tag which is nothing but first tag in tag field 
